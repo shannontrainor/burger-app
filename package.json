@@ -1,0 +1,24 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "Homework 13 Burger App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shannontrainor/burger-app.git"
+  },
+  "keywords": [
+    "burger",
+    "app"
+  ],
+  "author": "Shannon Trainor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shannontrainor/burger-app/issues"
+  },
+  "homepage": "https://github.com/shannontrainor/burger-app#readme"
+}

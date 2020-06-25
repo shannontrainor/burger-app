@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/shannontrainor/burger-app/issues"
   },
-  "homepage": "https://github.com/shannontrainor/burger-app#readme"
+  "homepage": "https://github.com/shannontrainor/burger-app#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }

@@ -35,7 +35,7 @@
 
 
 //orm.js 3 keys - all, create, update
-    //var orm = {all,create,uodate}
+    //var orm = {all,create,update}
     //sends queery before commncating with batase
     //imported to burger.js in models folder
     //orm.all requires 2 arguments

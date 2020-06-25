@@ -1,10 +1,41 @@
+//require express
+const express = require("express");
+
+//define port
+const PORT = process.env.PORT || 8080
+
+const app = express();
+
+//static content from public
+app.use(express.static("public"));
+
+//parse as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+//require express handlebars
+const exphbs = require("express-handlebars");
+
+//set handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+//import route from controllers
+
+
+//start server
+app.listen(PORT, () => {
+    //log when server starts
+    console.log(`Server listening on: http://localhost:${PORT}`);
+});
+
 // Use CATSAPP Activity 17
     //handle bars files will help
 
 
 TODO
-//1. create schema first
-//2. Create seeds
+//1. create schema first **
+//2. Create seeds **
 //3. Create index.handlebars & main.handlebars -- reference catsapp
         //handlebars: each = for loop, unless = if conditonal
 
@@ -30,7 +61,7 @@ TODO
     //c. create Ajax call to update PUT method
         //update ID of burger & send to route
 
-//9. Create connection.js
+//9. Create connection.js **
 
 //10. Creater controller.js
     //a. require express, router (express.Router();), require burger.js from models

@@ -1,5 +1,7 @@
+//require MYSQL
 const mysql = require("mysql");
 
+//create connection with .env
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -15,5 +17,6 @@ connection.connect((err) => {
     }
     console.log("connected as id " + connection.threadId);
 });
-  
+
+//export
 module.exports = connection;

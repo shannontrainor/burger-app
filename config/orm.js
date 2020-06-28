@@ -49,5 +49,23 @@ const orm = {
             cb(result);
         });
     },
-    update
-}
+    //objcolval = sql columns and values to update
+    update: (table, ojbColVals, condition, cb) => {     //taken from activity 17
+        let queryString = "UPDATE" + table;
+
+        queryString += "SET";
+        queryString += objToSql(ojbColVals);
+        queryString += "WHERE";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, (err,result) => {
+            if (err) {
+                throw error;
+            }
+            cb(result);
+        });
+    }
+};
+//export
+module.exports = orm;

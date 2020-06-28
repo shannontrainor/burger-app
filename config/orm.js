@@ -30,7 +30,24 @@ const orm = {
             cb(result);
         });
     },
-    create: 
+    create: (table, cols, vals, cb) => {            //taken from activity 17
+        let queryString = "INSERT INTO" + table;
+
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
+
+        console.log(queryString);
+
+        connection.query(queryString, vals, (err,result) => {
+            if (err) {
+                throw error;
+            }
+            cb(result);
+        });
     },
     update
 }

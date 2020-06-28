@@ -21,7 +21,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //import route from controllers
+const controllers = require("./controllers/burgers-controller.js")
 
+app.use(controllers);
 
 //start server
 app.listen(PORT, () => {
@@ -45,11 +47,11 @@ TODO
     //c. create new burger
     //d. turning not devoured (false) to devoured (true)
 
-//5. Set up server.js
-    //require express, handlebars
+//5. Set up server.js **
+    //require express, handlebars **
     //connect to controller.js
 
-//6. Set up controller.js
+//6. Set up controller.js **
 
 //7. Need API routes in burger.js - get/post/put
         //then res.render
@@ -63,11 +65,11 @@ TODO
 
 //9. Create connection.js **
 
-//10. Creater controller.js
-    //a. require express, router (express.Router();), require burger.js from models
-    //b. start router.get("/")
-        //res.redirect("/burgers") -- create redirect when user clicks, will redirect to burgers page
-    //c. in controller.js, var burger = (route to burger.js)
+//10. Creater controller.js **
+    //a. require express, router (express.Router();), require burger.js from models **
+    //b. start router.get("/") **
+        //res.redirect("/burgers") -- create redirect when user clicks, will redirect to burgers page **
+    //c. in controller.js, var burger = (route to burger.js) **
 
 //11. Create orm.js
     //import INTO burger.js

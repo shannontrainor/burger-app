@@ -1,12 +1,14 @@
 //require MYSQL
 const mysql = require("mysql");
+let connection;
+require("dotenv").config();
 
 //connection with JAWSDB
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   //create connection with .env
-  const connection = mysql.createConnection({
+  connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,

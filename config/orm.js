@@ -22,16 +22,16 @@ function objToSql(ob) {
 //object to access all, create, and update burgers
 const orm = {
     all: (tableInput, cb) => {
-        let queryString = "SELECT * FROM" + tableInput;
+        let queryString = "SELECT * FROM " + tableInput;
         connection.query(queryString, (err,result) => {
             if (err) {
-                throw error;
+                throw err;
             }
             cb(result);
         });
     },
     create: (table, cols, vals, cb) => {            //taken from activity 17
-        let queryString = "INSERT INTO" + table;
+        let queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -44,14 +44,14 @@ const orm = {
 
         connection.query(queryString, vals, (err,result) => {
             if (err) {
-                throw error;
+                throw err;
             }
             cb(result);
         });
     },
     //objcolval = sql columns and values to update
     update: (table, ojbColVals, condition, cb) => {     //taken from activity 17
-        let queryString = "UPDATE" + table;
+        let queryString = "UPDATE " + table;
 
         queryString += "SET";
         queryString += objToSql(ojbColVals);
@@ -61,7 +61,7 @@ const orm = {
         console.log(queryString);
         connection.query(queryString, (err,result) => {
             if (err) {
-                throw error;
+                throw err;
             }
             cb(result);
         });

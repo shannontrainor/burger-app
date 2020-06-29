@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <h1>Eat The Burger</h1>
+    </div>
+
+    <div class="col-md-6 text-center" class="task">
+        <div class="row">
+            {{#each burgerData}}
+                {{#unless this.devoured}}
+                <div class="col-md-9 text-center">
+                    <pre>{{this.id}}. {{this.name}}</pre>
+                </div>
+                <div class="col-md-3 text-center">
+                    <form class="devour-form button">
+                        <input input type="hidden" class="burgerId" type="text" value={{this.id}}>
+                        <button type="submit" class="btn btn-dark">Devour</button>
+                    </form>
+                </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>

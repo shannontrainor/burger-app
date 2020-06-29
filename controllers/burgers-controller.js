@@ -10,14 +10,14 @@ router.get("/", (req,res) => {
 
 //get req router for all burgers
 router.get("/burgers", (req,res) => {
-    burger.all((burgerData) => {
+    burger.selectAll((burgerData) => {
         res.render("index",)    //render to html ****
     });
 });
 
 //post req router for new burger
 router.post("/burgers/create", (req,res) => {
-    burger.create(req.body.name, (result) => {
+    burger.insertOne(req.body.name, (result) => {
         console.log(result);
         res.redirect("/");        //redirect to index
     });
@@ -25,7 +25,7 @@ router.post("/burgers/create", (req,res) => {
 
 //update req router
 router.put("/burgers/:id", (req,res) => {
-    burger.update(req.params.id, (result) => {
+    burger.updateOne(req.params.id, (result) => {
         console.log(result);
         res.status(200);
     });

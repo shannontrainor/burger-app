@@ -21,7 +21,7 @@ function objToSql(ob) {
 
 //object to access all, create, and update burgers
 const orm = {
-    all: (tableInput, cb) => {
+    selectAll: (tableInput, cb) => {
         let queryString = "SELECT * FROM " + tableInput;
         connection.query(queryString, (err,result) => {
             if (err) {
@@ -30,7 +30,7 @@ const orm = {
             cb(result);
         });
     },
-    create: (table, cols, vals, cb) => {            //taken from activity 17
+    insertOne: (table, cols, vals, cb) => {            //taken from activity 17
         let queryString = "INSERT INTO " + table;
 
         queryString += " (";
@@ -50,7 +50,7 @@ const orm = {
         });
     },
     //objcolval = sql columns and values to update
-    update: (table, ojbColVals, condition, cb) => {     //taken from activity 17
+    updateOne: (table, ojbColVals, condition, cb) => {     //taken from activity 17
         let queryString = "UPDATE " + table;
 
         queryString += "SET";
